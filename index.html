@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Creds Saver</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="creds.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style type="text/css">
+	.y {
+		color: yellow;
+	}
+</style>
+<body>
+
+	<center>Create new credentials</center>
+	<hr />
+	<center><u><b>made by HaxiDenti</b></u></center>
+	<hr />
+	<pre>
+		<u><i class="y">Name:</i></u>     <input id="name" /><br />
+		Login:    <input id="login" /><br />
+		Password: <input id="pass" /><br />
+		Email:    <input id="email" /><br />
+		Comments: <input id="comments" /><br />
+	</pre>
+	<center><button id="create">Create </button></center>
+
+	<script type="text/javascript">
+		window.onload = function() {
+			document.getElementById("create").onclick = function() {
+				var info = getInfo();
+				var credText = toCredText(info.name, info.login, info.pass, info.email, info.comments);
+				var url = generateUrl(credText);
+				window.location.href = url;
+			}
+		}
+
+		function getInfo() {
+			return {
+				name: document.getElementById("name").value,
+				login: document.getElementById("login").value,
+				pass: document.getElementById("pass").value,
+				email: document.getElementById("email").value,
+				comments: document.getElementById("comments").value,
+			}
+		}
+	</script>
+</body>
+</html>

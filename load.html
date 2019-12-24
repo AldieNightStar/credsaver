@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cred Saver</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="creds.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+	<center>Load credentials</center>
+	<hr />
+	<center><u><b>made by HaxiDenti</b></u></center>
+	<hr />
+	<pre>
+		<center><b><h2 id="name"></h2></b></center>
+		<div id="login"></div>
+		<div id="pass"></div>
+		<div id="email"></div>
+		<div id="comments"></div>
+	</pre>
+
+	<script type="text/javascript">
+		window.onload = function() {
+			var url = window.location.href;
+			var index = url.indexOf("?r=");
+			if (index < 0) {
+				window.alert("This page needs to have right URL!");
+				return;
+			}
+			index += 3; // 3 - is "?r=" length
+
+			var credsText = url.substr(index);
+			var info  = fromCredsText(credsText);
+			writeInfo(info);
+		}
+
+		function writeInfo(info) {
+			document.getElementById("name").innerHTML     = info.name;
+			document.getElementById("login").innerHTML    = "Login:    " + info.login;
+			document.getElementById("pass").innerHTML     = "Password: " + info.pass;
+			document.getElementById("email").innerHTML    = "Email:    " + info.email;
+			document.getElementById("comments").innerHTML = "Comments: " + info.comments;
+		}
+	</script>
+
+</body>
+</html>
