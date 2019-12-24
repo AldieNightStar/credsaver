@@ -76,7 +76,7 @@ function getFromUrl(url) {
 }
 
 function generateUrl(text) {
-	var site = "https://aldienightstar.github.io";
+	var site = "https://aldienightstar.github.io/credsaver";
 	var suburl = "/load.html";
 	return site + suburl + "?r=" + text;
 }
