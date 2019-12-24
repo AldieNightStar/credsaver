@@ -76,7 +76,7 @@ function getFromUrl(url) {
 }
 
 function generateUrl(text) {
-	var site = "C:/Users/imelnyk/Desktop/credsaver";
+	var site = "https://aldienightstar.github.io";
 	var suburl = "/load.html";
 	return site + suburl + "?r=" + text;
 }
